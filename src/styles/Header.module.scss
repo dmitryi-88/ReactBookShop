@@ -1,0 +1,54 @@
+@use "./Variables" as *;
+
+.header {
+    @include font-global;
+    background-color: var(--accent-color);
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        @include font-logo;
+
+        padding-left: 20px;
+
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 22px;
+    }
+
+    .options {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        .themeContainer {
+            
+        }
+
+        .ordersContainer {
+            .orders {
+                display: inline-block;
+                text-decoration: none;
+                color: var(--text-color);
+
+                transition: ease 0.2s;
+                @include hover-active;
+            }
+        }
+
+        .cartContainer {
+            padding-right: 20px;
+
+            .cart {
+                display: inline-block;
+                color: var(--text-color);
+
+                transition: ease 0.2s;
+                @include hover-active;
+            }
+        }
+    }
+}

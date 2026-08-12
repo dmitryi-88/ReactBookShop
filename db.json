@@ -1,0 +1,70 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Мастер и Маргарита",
+            "author": "Булгаков",
+            "price": 450,
+            "stock": 5,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 2,
+            "title": "Преступление и наказание",
+            "author": "Достоевский",
+            "price": 390,
+            "stock": 0,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 3,
+            "title": "Божественная комедия",
+            "author": "Данте Алигьери",
+            "price": 339,
+            "stock": 3,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 4,
+            "title": "Маленький принц",
+            "author": "Антуан де Сент-Экзюпери",
+            "price": 159,
+            "stock": 2,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 5,
+            "title": "Робинзон Крузо",
+            "author": "Даниэль Дефо",
+            "price": 199,
+            "stock": 1,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 6,
+            "title": "Идиот",
+            "author": "Федор Достоевский",
+            "price": 250,
+            "stock": 10,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 7,
+            "title": "1984",
+            "author": "Джордж Оруэлл",
+            "price": 500,
+            "stock": 2,
+            "image": "https://via.placeholder.com/150"
+        },
+        {
+            "id": 8,
+            "title": "Государство",
+            "author": "Платон",
+            "price": 270,
+            "stock": 3,
+            "image": "https://via.placeholder.com/150"
+        }
+    ],
+    "cart": [],
+    "orders": []
+}
