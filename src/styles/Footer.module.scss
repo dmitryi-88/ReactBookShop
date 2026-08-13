@@ -1,0 +1,6 @@
+@use './Variables' as *;
+
+.footerContainer {
+    height: 10vh;
+    background-color: var(--accent-color);
+}

@@ -3,18 +3,18 @@
         {
             "id": 1,
             "title": "Мастер и Маргарита",
-            "author": "Булгаков",
+            "author": "Михаил Булгаков",
             "price": 450,
             "stock": 5,
-            "image": "https://via.placeholder.com/150"
+            "image": "/images/Мастер и Маргарита.jpg"
         },
         {
             "id": 2,
             "title": "Преступление и наказание",
-            "author": "Достоевский",
+            "author": "Федор Достоевский",
             "price": 390,
             "stock": 0,
-            "image": "https://via.placeholder.com/150"
+            "image": "images/Преступление и наказание.jpg"
         },
         {
             "id": 3,
@@ -22,7 +22,7 @@
             "author": "Данте Алигьери",
             "price": 339,
             "stock": 3,
-            "image": "https://via.placeholder.com/150"
+            "image": "images/Божественная комедия.jpg"
         },
         {
             "id": 4,
@@ -30,7 +30,7 @@
             "author": "Антуан де Сент-Экзюпери",
             "price": 159,
             "stock": 2,
-            "image": "https://via.placeholder.com/150"
+            "image": "images/Маленький принц.jpg"
         },
         {
             "id": 5,
@@ -38,7 +38,7 @@
             "author": "Даниэль Дефо",
             "price": 199,
             "stock": 1,
-            "image": "https://via.placeholder.com/150"
+            "image": "images/Робинзон крузо.jpg"
         },
         {
             "id": 6,
@@ -46,7 +46,7 @@
             "author": "Федор Достоевский",
             "price": 250,
             "stock": 10,
-            "image": "https://via.placeholder.com/150"
+            "image": "images/Идиот.jpg"
         },
         {
             "id": 7,
@@ -54,7 +54,7 @@
             "author": "Джордж Оруэлл",
             "price": 500,
             "stock": 2,
-            "image": "https://via.placeholder.com/150"
+            "image": "/images/1984.jpg"
         },
         {
             "id": 8,
@@ -62,7 +62,23 @@
             "author": "Платон",
             "price": 270,
             "stock": 3,
-            "image": "https://via.placeholder.com/150"
+            "image": "images/Государство.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Диалоги",
+            "author": "Платон",
+            "price": 300,
+            "stock": 3,
+            "image": "images/Диалоги.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Скотный двор",
+            "author": "Джордж Оруэлл",
+            "price": 500,
+            "stock": 15,
+            "image": "images/Скотный двор.jpg"
         }
     ],
     "cart": [],
