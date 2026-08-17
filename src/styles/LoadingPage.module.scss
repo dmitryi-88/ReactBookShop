@@ -1,0 +1,20 @@
+@use "./Variables" as *;
+
+.loading {
+    padding-top: $padding-to-header;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        @include font-global;
+        text-align: center;
+        color: var(--text-color);
+    }
+
+    img {
+        width: 10%;
+    }
+}

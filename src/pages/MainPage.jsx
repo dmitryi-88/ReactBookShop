@@ -1,27 +1,44 @@
 import styles from "../styles/MainPage.module.scss";
+import { getCatalog } from "../API/UseApi";
+import ErrorPage from "../components/ErrorPage";
+import LoadingPage from "../components/LoadingPage";
 import { useEffect, useState } from "react";
 
 function MainPage() {
     const [books, setBooks] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const loadCatalog = () => {
+        setIsLoading(true);
+        setError(null);
+        
+        getCatalog()
+            .then((data) => setBooks(data))
+            .catch((error) => setError(error))
+            .finally(() => {
+                setIsLoading(false);
+            });
+    };
 
     useEffect(() => {
-        const getCatalog = async () => {
-            try {
-                const response = await fetch("http://localhost:3001/books");
-
-                if (!response.ok) {
-                    throw new Error("HTTP error:", response.status);
-                }
-
-                const data = await response.json();
-                setBooks(data);
-            } catch (error) {
-                console.error("Ошибка при отправке запроса к серверу:", error);
-            }
-        };
-
-        getCatalog();
+        setTimeout(() => {
+            loadCatalog();
+        }, 1000);
     }, []);
+
+    if (isLoading) {
+        return <LoadingPage />;
+    }
+
+    if (error) {
+        return (
+            <ErrorPage
+                message={`Упс.. Не удалось загрузить каталог! Ошибка: ${error}`}
+                onRetry={loadCatalog}
+            />
+        );
+    }
 
     return (
         <div className={styles.mainPageContainer}>

@@ -10,7 +10,7 @@
     align-items: baseline;
 
     gap: 20px;
-    padding-top: 100px;
+    padding-top: $padding-to-header;
     padding-bottom: 20px;
 
     .book {
@@ -118,7 +118,7 @@
                     padding: 8px;
                     margin-right: 8px;
 
-                    color: var(--accent-color-2);
+                    color: $blue-accent-color;
                     background-color: #ffffff00;
 
                     border: 0;
@@ -139,7 +139,7 @@
                 span {
                     margin-left: 10px;
                     @include font-global;
-                    color: rgb(4, 0, 72);
+                    color: $blue-accent-color;
                     font-weight: 600;
                 }
             }

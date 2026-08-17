@@ -1,0 +1,55 @@
+@use "./Variables" as *;
+
+.errorContainer {
+    min-height: 100vh;
+    padding-top: $padding-to-header;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .errorMessage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        h2 {
+            @include font-global;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        img {
+            width: 50%;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+
+            @media (max-width: 700px) {
+                width: 80%;
+            }
+        }
+    }
+
+    .retry {
+        padding-bottom: 50px;
+
+        button {
+            @include font-global;
+            font-size: 20px;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+
+            border: 0;
+            border-radius: 10px;
+
+            cursor: pointer;
+            transition: ease-in-out 0.2s;
+
+            @include hover-active;
+        }
+    }
+}

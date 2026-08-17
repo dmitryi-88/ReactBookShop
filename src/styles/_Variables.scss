@@ -28,11 +28,14 @@
     }
 
     &:active {
+        transition: ease 0.1s;
         transform: scale(0.95);
     }
 }
 
 $global-font-size: 18px;
+$blue-accent-color: #040048;
+$padding-to-header: 100px;
 
 :root {
     --bg-color: #e6d3c3;
