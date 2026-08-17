@@ -1,6 +1,7 @@
 @use "./Variables" as *;
 
 .mainPageContainer {
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;

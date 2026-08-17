@@ -31,7 +31,30 @@
         gap: 50px;
 
         .themeContainer {
-            
+            .themeButton {
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 0;
+                border-radius: 50px;
+                font-size: 18px;
+
+                background-color: var(--accent-color);
+                color: var(--text-color);
+
+                transition: ease-in 0.2s;
+
+                &:hover {
+                    transform: scale(1.08);
+                }
+                &:active {
+                    transition: ease 0.1s;
+                    transform: scale(0.95);
+                }
+            }
         }
 
         .ordersContainer {
@@ -54,6 +77,22 @@
 
                 transition: ease 0.2s;
                 @include hover-active;
+            }
+        }
+
+        @media (max-width: 700px) {
+            gap: 20px;
+
+            .themeContainer {
+                .themeButton {
+                    font-size: 13px;
+                }
+            }
+
+            .ordersContainer {
+                .orders {
+                    font-size: 13px;
+                }
             }
         }
     }

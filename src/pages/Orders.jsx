@@ -1,3 +1,9 @@
-function Orders() {}
+import styles from "../styles/Orders.module.scss";
 
-export default Orders
+function Orders() {
+    return (
+        <div className={styles.ordersContainer}></div>
+    )
+}
+
+export default Orders;
