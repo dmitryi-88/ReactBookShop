@@ -1,48 +1,9 @@
-import styles from "../styles/MainPage.module.scss";
-import { getCatalog } from "../API/UseApi";
-import ErrorPage from "../components/ErrorPage";
-import LoadingPage from "../components/LoadingPage";
-import CartButtonOnCard from "../microComponents/CartButtonOnCard";
-import { useEffect, useState } from "react";
+import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
+import styles from './BooksList.module.scss';
 
-function MainPage() {
-    const [books, setBooks] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    const loadCatalog = () => {
-        setIsLoading(true);
-        setError(null);
-
-        getCatalog()
-            .then((data) => setBooks(data))
-            .catch((error) => setError(error))
-            .finally(() => {
-                setIsLoading(false);
-            });
-    };
-
-    useEffect(() => {
-        setTimeout(() => {
-            loadCatalog();
-        }, 1000);
-    }, []);
-
-    if (isLoading) {
-        return <LoadingPage />;
-    }
-
-    if (error) {
-        return (
-            <ErrorPage
-                message={`Упс.. Не удалось загрузить каталог! Ошибка: ${error}`}
-                onRetry={loadCatalog}
-            />
-        );
-    }
-
+function BooksList({ books }) {
     return (
-        <div className={styles.mainPageContainer}>
+        <>
             {books.map((book) => (
                 <div className={styles.book} key={book.id}>
                     <div className={styles.bookBanner}>
@@ -83,8 +44,8 @@ function MainPage() {
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     );
 }
 
-export default MainPage;
+export default BooksList;

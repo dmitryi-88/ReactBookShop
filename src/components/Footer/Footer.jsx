@@ -1,8 +1,8 @@
-import styles from "../styles/Footer.module.scss";
+import styles from "./Footer.module.scss";
 
-import TelegramButton from "../microComponents/TelegramButton";
-import WhatsAppButton from "../microComponents/WhatsAppButton";
-import InstaButton from "../microComponents/InstaButton";
+import TelegramButton from "../../microComponents/TelegramButton";
+import WhatsAppButton from "../../microComponents/WhatsAppButton";
+import InstaButton from "../../microComponents/InstaButton";
 
 function Footer() {
     return (

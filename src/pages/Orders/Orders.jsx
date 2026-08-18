@@ -1,4 +1,4 @@
-import styles from "../styles/Orders.module.scss";
+import styles from "./Orders.module.scss";
 
 function Orders() {
     return (

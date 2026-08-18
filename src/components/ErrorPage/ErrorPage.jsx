@@ -1,5 +1,5 @@
-import styles from "../styles/ErrorPage.module.scss";
-import lib from "../assets/BrokenLib.png";
+import styles from "./ErrorPage.module.scss";
+import lib from "../../assets/BrokenLib.png";
 
 function ErrorPage({ message, onRetry }) {
     return (

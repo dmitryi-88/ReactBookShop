@@ -1,9 +1,9 @@
-import styles from "../styles/Header.module.scss";
+import styles from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
 
 import { useContext } from "react";
-import ThemeContext from "../context/ThemeContext";
-import CartButtonOnHeader from "../microComponents/CartButtonOnHeader";
+import ThemeContext from "../../context/ThemeContext";
+import CartButtonOnHeader from "../../microComponents/CartButtonOnHeader";
 
 function Header() {
     const { theme, toggleTheme } = useContext(ThemeContext);

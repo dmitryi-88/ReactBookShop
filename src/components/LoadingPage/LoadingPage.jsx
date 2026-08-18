@@ -1,5 +1,5 @@
-import styles from "../styles/LoadingPage.module.scss";
-import loadGif from "../assets/loading.gif";
+import styles from "./LoadingPage.module.scss";
+import loadGif from "../../assets/loading.gif";
 
 function LoadingPage() {
     return (

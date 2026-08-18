@@ -1,4 +1,4 @@
-import styles from '../styles/Cart.module.scss';
+import styles from './Cart.module.scss';
 
 function Cart() {
     return (

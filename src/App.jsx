@@ -1,12 +1,12 @@
-import styles from "./styles/App.module.scss";
+import styles from "./App.module.scss";
 
 import ThemeContext from "./context/ThemeContext";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import MainPage from "./pages/MainPage";
-import Orders from "./pages/Orders";
-import Cart from "./pages/Cart";
+import Header from './components/Header/Header';
+import Footer from "./components/Footer/Footer";
+import MainPage from "./pages/MainPage/MainPage";
+import Orders from "./pages/Orders/Orders";
+import Cart from "./pages/Cart/Cart";
 
 import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
