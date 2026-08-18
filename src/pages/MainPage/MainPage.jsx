@@ -7,6 +7,7 @@ import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import BooksList from "../../components/BooksList/BooksList";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterByAuthor from "../../components/FilterByAuthor/FilterByAuthor";
+import useDebounce from "../../hooks/UseDebounce";
 //LIB
 import { useEffect, useState, useMemo } from "react";
 
@@ -15,18 +16,25 @@ function MainPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    //state для поиска по названию книги
+    //state для поиска по названию книги.
     const [searchRequest, setSearchRequest] = useState("");
     const handleRequest = (e) => {
         setSearchRequest(e.target.value);
     };
 
-    // state для выбранного автора по фильтру
+    // state для выбранного автора по фильтру.
     const [selectedAuthor, setSelectedAuthor] = useState("");
-    const handleSelect = (e) => {
-        setSelectedAuthor(e.target.name);
+    const handleSelect = (value) => {
+        setSelectedAuthor(value);
     };
 
+    // state для сброса автора.
+    const [reset, setReset] = useState(false);
+    const toggleReset = () => {
+        setReset((prev) => !prev);
+    };
+
+    // Фильтр книг по автору и названию.
     const filteredBooks = useMemo(() => {
         if (selectedAuthor) {
             const filteredByAuthor = books.filter(
@@ -76,7 +84,12 @@ function MainPage() {
         <div className={styles.mainPageContainer}>
             <div className={styles.filterContainer}>
                 <SearchBar value={searchRequest} handleChange={handleRequest} />
-                <FilterByAuthor books={books} handleSelect={handleSelect} />
+                <FilterByAuthor
+                    books={books}
+                    handleSelect={handleSelect}
+                    reset={reset}
+                    toggleReset={toggleReset}
+                />
             </div>
 
             <div className={styles.catalogContainer}>

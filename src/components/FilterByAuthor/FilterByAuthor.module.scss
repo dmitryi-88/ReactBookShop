@@ -82,4 +82,41 @@
             display: flex;
         }
     }
+
+    .resetFilters {
+        width: 100%;
+        display: none;
+        justify-content: center;
+
+        button {
+            width: 50%;
+
+            cursor: pointer;
+            height: 25px;
+
+            @include font-global;
+            font-size: 13px;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+
+            border: 0;
+            border-radius: 6px;
+
+            transition: ease-out 0.1s;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.015);
+                box-shadow: 0 0 3px 1px var(--text-color);
+            }
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./FilterByAuthor.module.scss";
 
-function FilterByAuthor({ books, handleSelect }) {
+function FilterByAuthor({ books, handleSelect, reset, toggleReset }) {
     const [isActive, setIsActive] = useState(false);
     const toggleActive = () => {
         setIsActive((prev) => !prev);
@@ -16,6 +16,19 @@ function FilterByAuthor({ books, handleSelect }) {
             </button>
 
             <div
+                className={`${styles.resetFilters} ${reset ? styles.active : ""}`}
+            >
+                <button
+                    onClick={() => {
+                        toggleReset();
+                        handleSelect("");
+                    }}
+                >
+                    Все авторы
+                </button>
+            </div>
+
+            <div
                 className={`${styles.booksFilterContainer} ${isActive ? styles.active : ""}`}
             >
                 {uniqueAuthors.map((author) => (
@@ -23,8 +36,11 @@ function FilterByAuthor({ books, handleSelect }) {
                         name={author}
                         key={author}
                         onClick={(e) => {
-                            handleSelect(e);
+                            handleSelect(e.target.name);
                             toggleActive();
+                            if (!reset) {
+                                toggleReset();
+                            }
                         }}
                     >
                         {author}
