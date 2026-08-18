@@ -1,7 +1,8 @@
 import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
-import styles from './BooksList.module.scss';
+import styles from "./BooksList.module.scss";
+import { memo } from "react";
 
-function BooksList({ books }) {
+const BooksList = memo(({ books }) => {
     return (
         <>
             {books.map((book) => (
@@ -46,6 +47,6 @@ function BooksList({ books }) {
             ))}
         </>
     );
-}
+});
 
 export default BooksList;

@@ -21,9 +21,9 @@ function Header() {
                         className={styles.themeButton}
                     >
                         {theme === "light" ? (
-                            <i class="fa-regular fa-moon"></i>
+                            <i className="fa-regular fa-moon"></i>
                         ) : (
-                            <i class="fa-regular fa-sun"></i>
+                            <i className="fa-regular fa-sun"></i>
                         )}
                     </button>
                 </div>

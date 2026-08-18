@@ -5,6 +5,13 @@ import WhatsAppButton from "../../microComponents/WhatsAppButton";
 import InstaButton from "../../microComponents/InstaButton";
 
 function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <footer className={styles.footerContainer}>
             <div className={styles.socials}>
@@ -31,6 +38,10 @@ function Footer() {
                 >
                     <InstaButton />
                 </a>
+            </div>
+
+            <div className={styles.links}>
+                <button onClick={scrollToTop}>Вернуться в начало</button>
             </div>
 
             <div className={styles.license}>
