@@ -1,5 +1,88 @@
 @use "../../Variables" as *;
 
+@mixin cartButtons {
+    font-size: 23px;
+
+    color: var(--text-color);
+    background-color: var(--accent-color);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: ease-out 0.2s;
+
+    &:hover {
+        transform: translateY(-5%);
+        box-shadow: 0 3px 10px 0;
+    }
+    &:active {
+        transition: ease 0.1s;
+        transform: scale(0.97);
+    }
+}
+
 .cartContainer {
     min-height: 100vh;
+    padding-top: $padding-to-header;
+    margin-left: 5%;
+    margin-bottom: 25px;
+    display: flex;
+
+    @include font-global;
+
+    .chosenProducts {
+        @include flex-column-center;
+        width: 55%;
+        margin-right: 5%;
+        padding-top: 20px;
+
+        box-shadow: 0 0 5px 1px var(--text-color);
+        border-radius: 8px;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 50px;
+        width: 35%;
+
+        border-radius: 8px;
+
+        .makeOrder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding-top: 20px;
+
+            box-shadow: 0 0 5px 1px var(--text-color);
+            border-radius: 8px;
+
+            width: 100%;
+            height: 50%;
+
+            span {
+                margin-bottom: 30px;
+            }
+
+            button {
+                @include font-global;
+                @include cartButtons;
+            }
+        }
+
+        .returnToCatalog {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            button {
+                @include font-global;
+                @include cartButtons;
+            }
+        }
+    }
 }
