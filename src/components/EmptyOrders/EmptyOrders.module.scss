@@ -1,0 +1,50 @@
+@use "../../Variables" as *;
+
+.emptyOrdersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        @include font-global;
+        color: var(--text-color);
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    img {
+        width: 60%;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+        
+        text-decoration: none;
+        @include font-global;
+        background-color: var(--accent-color);
+        color: var(--text-color);
+
+        width: 50%;
+        height: 30px;
+
+        border: 0;
+        border-radius: 6px;
+
+        transition: ease-out 0.2s;
+        @include hover-active;
+    }
+
+    @media (min-width: 700px) {
+        img {
+            width: 20%;
+        }
+
+        a {
+            width: 20%;
+        }
+    }
+}

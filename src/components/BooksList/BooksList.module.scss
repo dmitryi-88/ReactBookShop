@@ -35,6 +35,14 @@
             border-radius: 8px;
             border: 1px solid var(--accent-color-2);
             box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.3);
+
+            filter: grayscale(0.7);
+            cursor: pointer;
+            transition: ease-out 0.1s;
+
+            &:hover {
+                filter: grayscale(0);
+            }
         }
     }
 

@@ -42,18 +42,19 @@ function MainPage() {
                 (book) => book.author === selectedAuthor,
             );
             return filteredByAuthor.filter((book) =>
-                book.title.toLowerCase().includes(debouncedSearchRequest.toLowerCase()),
+                book.title
+                    .toLowerCase()
+                    .includes(debouncedSearchRequest.toLowerCase()),
             );
         }
         return books.filter((book) =>
-            book.title.toLowerCase().includes(debouncedSearchRequest.toLowerCase()),
+            book.title
+                .toLowerCase()
+                .includes(debouncedSearchRequest.toLowerCase()),
         );
     }, [books, debouncedSearchRequest, selectedAuthor]);
 
     const loadCatalog = () => {
-        setIsLoading(true);
-        setError(null);
-
         getCatalog()
             .then((data) => setBooks(data))
             .catch((error) => setError(error))
@@ -62,10 +63,14 @@ function MainPage() {
             });
     };
 
+    const retryCatalog = () => {
+        setIsLoading(true);
+        setError(null);
+        loadCatalog();
+    };
+
     useEffect(() => {
-        setTimeout(() => {
-            loadCatalog();
-        }, 1000);
+        loadCatalog();
     }, []);
 
     if (isLoading) {
@@ -76,7 +81,7 @@ function MainPage() {
         return (
             <ErrorPage
                 message={`Упс.. Не удалось загрузить каталог! Ошибка: ${error}`}
-                onRetry={loadCatalog}
+                onRetry={retryCatalog}
             />
         );
     }
