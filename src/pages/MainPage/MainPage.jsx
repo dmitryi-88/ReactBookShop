@@ -18,6 +18,7 @@ function MainPage() {
 
     //state для поиска по названию книги.
     const [searchRequest, setSearchRequest] = useState("");
+    const debouncedSearchRequest = useDebounce(searchRequest);
     const handleRequest = (e) => {
         setSearchRequest(e.target.value);
     };
@@ -41,13 +42,13 @@ function MainPage() {
                 (book) => book.author === selectedAuthor,
             );
             return filteredByAuthor.filter((book) =>
-                book.title.toLowerCase().includes(searchRequest.toLowerCase()),
+                book.title.toLowerCase().includes(debouncedSearchRequest.toLowerCase()),
             );
         }
         return books.filter((book) =>
-            book.title.toLowerCase().includes(searchRequest.toLowerCase()),
+            book.title.toLowerCase().includes(debouncedSearchRequest.toLowerCase()),
         );
-    }, [books, searchRequest, selectedAuthor]);
+    }, [books, debouncedSearchRequest, selectedAuthor]);
 
     const loadCatalog = () => {
         setIsLoading(true);

@@ -74,6 +74,7 @@
             .cart {
                 display: inline-block;
                 color: var(--text-color);
+                background-color: transparent;
 
                 transition: ease 0.2s;
                 @include hover-active;

@@ -41,10 +41,12 @@ $padding-to-header: 100px;
     --bg-color: #e6d3c3;
     --text-color: #1f3a5f;
     --accent-color: #c59b5f;
+    --accent-color-light: #c7ab85;
 }
 
 [data-theme="dark"] {
     --bg-color: #1f3a5f;
     --text-color: #e6d3c3;
-    --accent-color: #c59b5f;
+    --accent-color: #0c352f;
+    --accent-color-light: #2b615893;
 }
