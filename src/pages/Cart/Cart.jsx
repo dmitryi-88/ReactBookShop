@@ -1,6 +1,7 @@
 import styles from "./Cart.module.scss";
 
 import { useReducer, useMemo } from "react";
+import { NavLink } from "react-router-dom";
 
 function Cart() {
     return (
@@ -14,7 +15,9 @@ function Cart() {
                 </div>
 
                 <div className={styles.returnToCatalog}>
-                    <button>Вернуться к покупкам</button>
+                    <NavLink to={'/'}>
+                        <button>Вернуться к покупкам</button>
+                    </NavLink>
                 </div>
             </div>
         </div>

@@ -9,12 +9,20 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterByAuthor from "../../components/FilterByAuthor/FilterByAuthor";
 import useDebounce from "../../hooks/UseDebounce";
 //LIB
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 function MainPage() {
-    const [books, setBooks] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const {
+        data: books = [],
+        isLoading,
+        isError,
+        error,
+        refetch,
+    } = useQuery({
+        queryKey: ["books"],
+        queryFn: getCatalog,
+    });
 
     //state для поиска по названию книги.
     const [searchRequest, setSearchRequest] = useState("");
@@ -54,34 +62,15 @@ function MainPage() {
         );
     }, [books, debouncedSearchRequest, selectedAuthor]);
 
-    const loadCatalog = () => {
-        getCatalog()
-            .then((data) => setBooks(data))
-            .catch((error) => setError(error))
-            .finally(() => {
-                setIsLoading(false);
-            });
-    };
-
-    const retryCatalog = () => {
-        setIsLoading(true);
-        setError(null);
-        loadCatalog();
-    };
-
-    useEffect(() => {
-        loadCatalog();
-    }, []);
-
     if (isLoading) {
         return <LoadingPage />;
     }
 
-    if (error) {
+    if (isError) {
         return (
             <ErrorPage
-                message={`Упс.. Не удалось загрузить каталог! Ошибка: ${error}`}
-                onRetry={retryCatalog}
+                message={`Упс.. Не удалось загрузить страницу! Ошибка: ${error.message}`}
+                onRetry={refetch}
             />
         );
     }

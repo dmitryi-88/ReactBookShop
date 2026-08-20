@@ -6,12 +6,15 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App.jsx";
 import ThemeProvider from "./context/ThemeProvider.jsx";
+import QueryProvider from "./QueryClientProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <BrowserRouter>
             <ThemeProvider>
-                <App />
+                <QueryProvider>
+                    <App />
+                </QueryProvider>
             </ThemeProvider>
         </BrowserRouter>
     </StrictMode>,

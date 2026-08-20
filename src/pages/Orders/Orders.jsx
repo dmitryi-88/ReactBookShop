@@ -37,7 +37,7 @@ function Orders() {
     if (error) {
         return (
             <ErrorPage
-                message={`Упс.. Не удалось загрузить каталог! Ошибка: ${error}`}
+                message={`Упс.. Не удалось загрузить страницу! Ошибка: ${error}`}
                 onRetry={retryLoadingOrders}
             />
         );
