@@ -1,7 +1,7 @@
 import styles from "./Orders.module.scss";
 
-import { useEffect, useState } from "react";
 import { getOrders } from "../../API/UseApi";
+import { useQuery } from "@tanstack/react-query";
 
 import EmptyOrders from "../../components/EmptyOrders/EmptyOrders";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
@@ -9,36 +9,26 @@ import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import OrdersList from "../../components/OrdersList/OrdersList";
 
 function Orders() {
-    const [orders, setOrders] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const {
+        data: orders,
+        isLoading,
+        isError,
+        error,
+        refetch,
+    } = useQuery({
+        queryKey: ["orders"],
+        queryFn: getOrders,
+    });
 
-    const loadOrders = () => {
-        getOrders()
-            .then((data) => setOrders(data))
-            .catch((error) => setError(error))
-            .finally(() => setLoading(false));
-    };
-
-    const retryLoadingOrders = () => {
-        setError(null);
-        setLoading(true);
-        loadOrders();
-    };
-
-    useEffect(() => {
-        loadOrders();
-    }, []);
-
-    if (loading) {
+    if (isLoading) {
         return <LoadingPage />;
     }
 
-    if (error) {
+    if (isError) {
         return (
             <ErrorPage
                 message={`Упс.. Не удалось загрузить страницу! Ошибка: ${error}`}
-                onRetry={retryLoadingOrders}
+                onRetry={refetch}
             />
         );
     }
