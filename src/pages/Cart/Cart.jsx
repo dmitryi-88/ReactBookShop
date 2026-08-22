@@ -3,6 +3,8 @@ import styles from "./Cart.module.scss";
 import { useReducer, useMemo } from "react";
 import { NavLink } from "react-router-dom";
 
+import cartReducer from "../../reducers/cardReducer";
+
 function Cart() {
     return (
         <div className={styles.cartContainer}>
@@ -15,7 +17,7 @@ function Cart() {
                 </div>
 
                 <div className={styles.returnToCatalog}>
-                    <NavLink to={'/'}>
+                    <NavLink to={'/'} viewTransition>
                         <button>Вернуться к покупкам</button>
                     </NavLink>
                 </div>

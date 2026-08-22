@@ -1,12 +1,14 @@
 @use "../../Variables" as *;
 
 @mixin cartButtons {
-    font-size: 23px;
+    font-size: 20px;
+    padding: 5px;
 
     color: var(--text-color);
     background-color: var(--accent-color);
 
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 0;
 
     cursor: pointer;
     transition: ease-out 0.2s;
