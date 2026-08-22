@@ -21,4 +21,3 @@ export const getOrders = async () => {
     const data = await response.json();
     return data;
 };
-

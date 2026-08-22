@@ -1,0 +1,42 @@
+@use "../../Variables" as *;
+
+.emptyCartContainer {
+    @include flex-column-center;
+    @include font-global;
+
+    min-height: 100vh;
+
+    h2 {
+        text-align: center;
+        color: var(--text-color);
+    }
+
+    span {
+        text-align: center;
+        color: var(--text-color);
+        padding-bottom: 50px;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+
+            color: var(--text-color);
+            background-color: var(--accent-color);
+            border: 0;
+            border-radius: 10px;
+
+            transition: ease-out 0.2s;
+            @include hover-active;
+            @include font-global;
+        }
+    }
+}

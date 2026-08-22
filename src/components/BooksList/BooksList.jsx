@@ -1,8 +1,11 @@
 import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
 import styles from "./BooksList.module.scss";
-import { memo } from "react";
+import { memo, useContext } from "react";
+import CartContext from "../../context/CartContext";
 
 const BooksList = memo(({ books }) => {
+    const { dispatch } = useContext(CartContext);
+
     return (
         <>
             {books.map((book) => (
@@ -38,7 +41,22 @@ const BooksList = memo(({ books }) => {
                         <div className={styles.priceAndCart}>
                             <span>{book.price}₽</span>
 
-                            <button disabled={book.stock ? true : false}>
+                            <button
+                                onClick={() =>
+                                    dispatch({
+                                        type: "ADD",
+                                        payload: {
+                                            id: book.id,
+                                            title: book.title,
+                                            author: book.author,
+                                            price: book.price,
+                                            stock: book.stock,
+                                            image: book.image,
+                                        },
+                                    })
+                                }
+                                disabled={book.stock === 0}
+                            >
                                 <CartButtonOnCard />
                             </button>
                         </div>

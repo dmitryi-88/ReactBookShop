@@ -1,7 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const useLocalStorage = () => {
-    const [cart, setCart] = useState(() => {
-        return localStorage.getItem("cart") || "";
+function useLocalStorage(key, initialValue) {
+    const [value, setValue] = useState(() => {
+        const savedValue = localStorage.getItem(key);
+
+        if (savedValue) {
+            return JSON.parse(savedValue);
+        }
+
+        return initialValue;
     });
-};
+
+    useEffect(() => {
+        localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value]);
+
+    return [value, setValue];
+}
+
+export default useLocalStorage;

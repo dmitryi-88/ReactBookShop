@@ -1,7 +1,8 @@
 @use "../../Variables" as *;
 
 @mixin cartButtons {
-    font-size: 20px;
+    width: 80%;
+    font-size: 15px;
     padding: 5px;
 
     color: var(--text-color);
@@ -56,6 +57,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 20px;
 
             padding-top: 20px;
 
@@ -80,6 +82,10 @@
 
             display: flex;
             justify-content: center;
+
+            a {
+                text-align: center
+            }
 
             button {
                 @include font-global;
