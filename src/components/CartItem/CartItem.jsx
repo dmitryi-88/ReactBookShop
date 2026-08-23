@@ -26,10 +26,12 @@ function CartItem({ book }) {
             <div className={styles.description}>
                 <span className={styles.title}>{book.title}</span>
                 <span className={styles.author}>{book.author}</span>
-                <span className={styles.price}>Цена: {book.price}₽</span>
-                <span className={styles.stock}>
-                    Осталось в наличии: {book.stock}
-                </span>
+                <div className={styles.info}>
+                    <span className={styles.price}>Цена: {book.price}₽</span>
+                    <span className={styles.stock}>
+                        Осталось в наличии: {book.stock}
+                    </span>
+                </div>
             </div>
 
             <div className={styles.options}>

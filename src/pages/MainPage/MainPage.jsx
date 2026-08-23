@@ -1,6 +1,6 @@
 import styles from "./MainPage.module.scss";
 //API
-import { getCatalog } from "../../API/UseApi";
+import { getCatalog } from "../../API/UseApi.js";
 //COMPONENTS
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";

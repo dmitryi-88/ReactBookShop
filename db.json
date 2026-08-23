@@ -1,86 +1,87 @@
 {
-    "books": [
-        {
-            "id": 1,
-            "title": "Мастер и Маргарита",
-            "author": "Михаил Булгаков",
-            "price": 450,
-            "stock": 5,
-            "image": "/images/Мастер и Маргарита.jpg"
-        },
-        {
-            "id": 2,
-            "title": "Преступление и наказание",
-            "author": "Федор Достоевский",
-            "price": 390,
-            "stock": 0,
-            "image": "images/Преступление и наказание.jpg"
-        },
-        {
-            "id": 3,
-            "title": "Божественная комедия",
-            "author": "Данте Алигьери",
-            "price": 339,
-            "stock": 3,
-            "image": "images/Божественная комедия.jpg"
-        },
-        {
-            "id": 4,
-            "title": "Маленький принц",
-            "author": "Антуан де Сент-Экзюпери",
-            "price": 159,
-            "stock": 2,
-            "image": "images/Маленький принц.jpg"
-        },
-        {
-            "id": 5,
-            "title": "Робинзон Крузо",
-            "author": "Даниэль Дефо",
-            "price": 199,
-            "stock": 1,
-            "image": "images/Робинзон крузо.jpg"
-        },
-        {
-            "id": 6,
-            "title": "Идиот",
-            "author": "Федор Достоевский",
-            "price": 250,
-            "stock": 10,
-            "image": "images/Идиот.jpg"
-        },
-        {
-            "id": 7,
-            "title": "1984",
-            "author": "Джордж Оруэлл",
-            "price": 500,
-            "stock": 2,
-            "image": "/images/1984.jpg"
-        },
-        {
-            "id": 8,
-            "title": "Государство",
-            "author": "Платон",
-            "price": 270,
-            "stock": 0,
-            "image": "images/Государство.jpg"
-        },
-        {
-            "id": 9,
-            "title": "Диалоги",
-            "author": "Платон",
-            "price": 300,
-            "stock": 3,
-            "image": "images/Диалоги.jpg"
-        },
-        {
-            "id": 10,
-            "title": "Скотный двор",
-            "author": "Джордж Оруэлл",
-            "price": 500,
-            "stock": 15,
-            "image": "images/Скотный двор.jpg"
-        }
-    ],
-    "cart": [],
-    "orders": []
+  "books": [
+    {
+      "id": "1",
+      "title": "Мастер и Маргарита",
+      "author": "Михаил Булгаков",
+      "price": 450,
+      "stock": 3,
+      "image": "/images/Мастер и Маргарита.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Преступление и наказание",
+      "author": "Федор Достоевский",
+      "price": 390,
+      "stock": 0,
+      "image": "images/Преступление и наказание.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Божественная комедия",
+      "author": "Данте Алигьери",
+      "price": 339,
+      "stock": 1,
+      "image": "images/Божественная комедия.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Маленький принц",
+      "author": "Антуан де Сент-Экзюпери",
+      "price": 159,
+      "stock": 0,
+      "image": "images/Маленький принц.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Робинзон Крузо",
+      "author": "Даниэль Дефо",
+      "price": 199,
+      "stock": 3,
+      "image": "images/Робинзон крузо.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Идиот",
+      "author": "Федор Достоевский",
+      "price": 250,
+      "stock": 10,
+      "image": "images/Идиот.jpg"
+    },
+    {
+      "id": "7",
+      "title": "1984",
+      "author": "Джордж Оруэлл",
+      "price": 500,
+      "stock": 0,
+      "image": "/images/1984.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Государство",
+      "author": "Платон",
+      "price": 270,
+      "stock": 4,
+      "image": "images/Государство.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Диалоги",
+      "author": "Платон",
+      "price": 300,
+      "stock": 1,
+      "image": "images/Диалоги.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Скотный двор",
+      "author": "Джордж Оруэлл",
+      "price": 500,
+      "stock": 0,
+      "image": "images/Скотный двор.jpg"
+    }
+  ],
+  "cart": [],
+  "orders": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

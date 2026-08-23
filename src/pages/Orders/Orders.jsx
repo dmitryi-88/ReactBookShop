@@ -1,6 +1,6 @@
 import styles from "./Orders.module.scss";
 
-import { getOrders } from "../../API/UseApi";
+import { getOrders } from "../../API/UseApi.js";
 import { useQuery } from "@tanstack/react-query";
 
 import EmptyOrders from "../../components/EmptyOrders/EmptyOrders";

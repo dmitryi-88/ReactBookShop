@@ -2,6 +2,7 @@ import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
 import styles from "./BooksList.module.scss";
 import { memo, useContext } from "react";
 import CartContext from "../../context/CartContext";
+import { NavLink } from "react-router-dom";
 
 const BooksList = memo(({ books }) => {
     const { dispatch } = useContext(CartContext);
@@ -57,7 +58,9 @@ const BooksList = memo(({ books }) => {
                                 }
                                 disabled={book.stock === 0}
                             >
-                                <CartButtonOnCard />
+                                <NavLink to={"/cart"}>
+                                    <CartButtonOnCard />
+                                </NavLink>
                             </button>
                         </div>
                     </div>

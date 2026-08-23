@@ -24,6 +24,22 @@
         span {
             color: var(--text-color);
         }
+
+        .info {
+            @include flex-column-center;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px 2px var(--accent-color);
+        }
+
+        .author {
+            font-size: 13px;
+            padding-bottom: 10px;
+        }
+
+        .price {
+            padding-bottom: 10px;
+        }
     }
 
     .options {

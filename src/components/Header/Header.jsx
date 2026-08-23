@@ -2,11 +2,13 @@ import styles from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
 
 import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 import ThemeContext from "../../context/ThemeContext";
 import CartButtonOnHeader from "../../microComponents/CartButtonOnHeader";
 
 function Header() {
     const { theme, toggleTheme } = useContext(ThemeContext);
+    const { cart } = useContext(CartContext);
 
     return (
         <header className={styles.header}>
@@ -36,7 +38,7 @@ function Header() {
 
                 <div className={styles.cartContainer}>
                     <NavLink to={"/cart"} className={styles.cart}>
-                        <CartButtonOnHeader />
+                        <CartButtonOnHeader productsCount={cart.length} />
 
                         <span className={styles.counter}></span>
                     </NavLink>

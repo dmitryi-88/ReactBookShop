@@ -8,8 +8,14 @@ function Orderslist({ orders }) {
             {orders.map((order, index) => (
                 <div key={index} className={styles.orderItem}>
                     <ul>
-                        {order.items.map((item, index) => (
-                            <li key={index}>{item}</li>
+                        {order.items.map((item) => (
+                            <li key={item.id}>
+                                <div className={styles.info}>
+                                    <span>{item.title}</span>
+                                    <span>({item.author})</span>
+                                    <span>Количество: {item.quantity}</span>
+                                </div>
+                            </li>
                         ))}
                     </ul>
                         <hr />

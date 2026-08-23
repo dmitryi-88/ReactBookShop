@@ -71,6 +71,10 @@
         .cartContainer {
             padding-right: 20px;
 
+            a {
+                text-decoration: none;
+            }
+
             .cart {
                 display: inline-block;
                 color: var(--text-color);
