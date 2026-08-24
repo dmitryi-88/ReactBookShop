@@ -8,11 +8,15 @@ import BooksList from "../../components/BooksList/BooksList";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterByAuthor from "../../components/FilterByAuthor/FilterByAuthor";
 import useDebounce from "../../hooks/UseDebounce";
+// Context
+import ToastContext from "../../context/ToastContext.jsx";
 //LIB
-import { useState, useMemo } from "react";
+import { useState, useMemo, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 function MainPage() {
+    const { isToast } = useContext(ToastContext);
+
     const {
         data: books = [],
         isLoading,
@@ -85,6 +89,7 @@ function MainPage() {
                     reset={reset}
                     toggleReset={toggleReset}
                 />
+                {isToast && isToast}
             </div>
 
             <div className={styles.catalogContainer}>

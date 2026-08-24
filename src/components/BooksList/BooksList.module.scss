@@ -137,6 +137,12 @@
                     transition: ease 0.1s;
                     transform: scale(0.95);
                 }
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                    transform: none;
+                    box-shadow: none;
+                }
             }
 
             span {

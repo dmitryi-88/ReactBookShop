@@ -21,7 +21,7 @@
       "title": "Божественная комедия",
       "author": "Данте Алигьери",
       "price": 339,
-      "stock": 1,
+      "stock": 0,
       "image": "images/Божественная комедия.jpg"
     },
     {
@@ -82,6 +82,23 @@
     }
   ],
   "cart": [],
-  "orders": [],
+  "orders": [
+    {
+      "items": [
+        {
+          "id": "3",
+          "title": "Божественная комедия",
+          "author": "Данте Алигьери",
+          "price": 339,
+          "stock": 1,
+          "image": "images/Божественная комедия.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 339,
+      "createdAt": "23.08.2026, 22:29:54",
+      "id": "KTVvEBoljJ8"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

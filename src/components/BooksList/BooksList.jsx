@@ -2,10 +2,11 @@ import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
 import styles from "./BooksList.module.scss";
 import { memo, useContext } from "react";
 import CartContext from "../../context/CartContext";
-import { NavLink } from "react-router-dom";
+import ToastContext from "../../context/ToastContext";
 
 const BooksList = memo(({ books }) => {
     const { dispatch } = useContext(CartContext);
+    const { handlerToast } = useContext(ToastContext);
 
     return (
         <>
@@ -43,7 +44,7 @@ const BooksList = memo(({ books }) => {
                             <span>{book.price}₽</span>
 
                             <button
-                                onClick={() =>
+                                onClick={() => {
                                     dispatch({
                                         type: "ADD",
                                         payload: {
@@ -54,13 +55,12 @@ const BooksList = memo(({ books }) => {
                                             stock: book.stock,
                                             image: book.image,
                                         },
-                                    })
-                                }
+                                    });
+                                    handlerToast();
+                                }}
                                 disabled={book.stock === 0}
                             >
-                                <NavLink to={"/cart"}>
-                                    <CartButtonOnCard />
-                                </NavLink>
+                                <CartButtonOnCard />
                             </button>
                         </div>
                     </div>

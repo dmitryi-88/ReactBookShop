@@ -8,6 +8,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import Orders from "./pages/Orders/Orders";
 import Cart from "./pages/Cart/Cart";
 import CartProvider from "./context/CartProvider";
+import ToastProvider from "./context/ToastProvider";
 
 import { Routes, Route } from "react-router-dom";
 import { useContext } from "react";
@@ -21,7 +22,14 @@ function App() {
                 <Header />
 
                 <Routes>
-                    <Route path="/" element={<MainPage />} />
+                    <Route
+                        path="/"
+                        element={
+                            <ToastProvider>
+                                <MainPage />
+                            </ToastProvider>
+                        }
+                    />
                     <Route path="/orders" element={<Orders />} />
                     <Route path="/cart" element={<Cart />} />
                 </Routes>

@@ -1,6 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Unbounded:wght@200..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Sekuya&family=Unbounded:wght@200..900&display=swap");
 
+$global-font-size: 18px;
+$blue-accent-color: #040048;
+$padding-to-header: 100px;
+
+:root {
+    --bg-color: #e6d3c3;
+    --text-color: #1f3a5f;
+    --accent-color: #c59b5f;
+    --accent-color-light: #c7ab85;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1f3a5f;
+    --text-color: #e6d3c3;
+    --accent-color: #0c352f;
+    --accent-color-light: #2b615893;
+}
+
 @mixin flex-column-center {
     display: flex;
     flex-direction: column;
@@ -32,20 +50,4 @@
     }
 }
 
-$global-font-size: 18px;
-$blue-accent-color: #040048;
-$padding-to-header: 100px;
 
-:root {
-    --bg-color: #e6d3c3;
-    --text-color: #1f3a5f;
-    --accent-color: #c59b5f;
-    --accent-color-light: #c7ab85;
-}
-
-[data-theme="dark"] {
-    --bg-color: #1f3a5f;
-    --text-color: #e6d3c3;
-    --accent-color: #0c352f;
-    --accent-color-light: #2b615893;
-}

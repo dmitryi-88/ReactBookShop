@@ -9,7 +9,7 @@ function EmptyCart() {
                 Загляните на главную - собрали там книги, которые могут вам
                 понравиться
             </span>
-            <NavLink to={"/"}>
+            <NavLink to={"/"} viewTransition>
                 <button>Перейти на главную</button>
             </NavLink>
         </div>

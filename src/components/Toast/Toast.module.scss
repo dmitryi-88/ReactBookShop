@@ -1,0 +1,25 @@
+@use "../../Variables" as *;
+
+.ToastContainer {
+    @include font-global;
+    @include flex-column-center;
+
+    position: fixed;
+    z-index: 100;
+    bottom: 10vh;
+    right: 0.5%;
+
+    border-radius: 10px;
+    width: 200px;
+    height: 70px;
+
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px 5px var(--text-color);
+
+    opacity: 0.9;
+
+    span {
+        color: var(--text-color);
+        text-align: center;
+    }
+}

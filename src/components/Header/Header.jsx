@@ -12,7 +12,7 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <NavLink to={"/"} className={styles.logo}>
+            <NavLink to={"/"} className={styles.logo} viewTransition>
                 Books Place
             </NavLink>
 

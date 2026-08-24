@@ -10,7 +10,7 @@ function EmptyOrders() {
             <img src={emptyOrderImg} alt="" />
 
             <h2>Самое время сделать первый заказ</h2>
-            <NavLink to={'/'}>К покупкам</NavLink>
+            <NavLink to={'/'} viewTransition>К покупкам</NavLink>
         </div>
     );
 }

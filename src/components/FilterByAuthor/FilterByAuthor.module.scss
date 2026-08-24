@@ -121,4 +121,12 @@
             display: flex;
         }
     }
+
+    @media (max-width: 700px) {
+        .booksFilterContainer {
+            button {
+                font-size: 10px;
+            }
+        }
+    }
 }
