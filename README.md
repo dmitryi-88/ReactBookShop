@@ -51,7 +51,7 @@
 Клонируйте репозиторий:
 
 ```bash
-git clone <https://github.com/dmitryi-88/ReactBookShop>
+git clone https://github.com/dmitryi-88/ReactBookShop
 ```
 
 Перейдите в папку проекта:
