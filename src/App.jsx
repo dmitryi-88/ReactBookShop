@@ -5,6 +5,7 @@ import ThemeContext from "./context/ThemeContext";
 import CartProvider from "./context/CartProvider";
 import ToastProvider from "./context/ToastProvider";
 import PageAnimation from "./animation/PageAnimation";
+import DescriptionProvider from "./context/DescriptionProvider";
 // Components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -29,7 +30,9 @@ function App() {
                         element={
                             <ToastProvider>
                                 <PageAnimation>
-                                    <MainPage />
+                                    <DescriptionProvider>
+                                        <MainPage />
+                                    </DescriptionProvider>
                                 </PageAnimation>
                             </ToastProvider>
                         }

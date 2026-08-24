@@ -1,0 +1,70 @@
+@use "../../Variables" as *;
+
+.descriptionContainer {
+    position: fixed;
+    z-index: 100;
+    top: 30%;
+
+    background-color: var(--accent-color);
+
+    display: none;
+    flex-direction: column;
+
+    box-shadow: 0 0 10px 5px var(--text-color);
+    border-radius: 12px;
+
+    width: 70%;
+    padding: 20px;
+
+    transition: ease 0.3s;
+
+    .closeButton {
+        display: flex;
+        justify-content: end;
+
+        button {
+            cursor: pointer;
+            border: 0;
+            background-color: transparent;
+
+            color: $blue-accent-color;
+            font-size: 30px;
+
+            transition: ease 0.5s;
+            &:hover {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+
+    .info {
+        @include flex-column-center;
+        @include font-global;
+
+        hr {
+            width: 80%;
+        }
+
+        h3 {
+            font-size: 17px;
+            color: var(--text-color);
+        }
+
+        span {
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .authorSpan {
+            font-size: 15px;
+        }
+
+        .descSpan {
+            font-size: 12px;
+        }
+    }
+
+    &.active {
+        display: flex;
+    }
+}

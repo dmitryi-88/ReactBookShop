@@ -8,6 +8,7 @@ import BooksList from "../../components/BooksList/BooksList";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterByAuthor from "../../components/FilterByAuthor/FilterByAuthor";
 import useDebounce from "../../hooks/UseDebounce";
+import BookDescription from "../../components/BookDescription/BookDescription.jsx";
 // Context
 import ToastContext from "../../context/ToastContext.jsx";
 // Libs
@@ -92,6 +93,7 @@ function MainPage() {
                     toggleReset={toggleReset}
                 />
                 {isToast && isToast}
+                {<BookDescription />}
             </div>
 
             <div className={styles.catalogContainer}>

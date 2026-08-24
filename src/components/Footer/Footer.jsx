@@ -1,4 +1,5 @@
 import styles from "./Footer.module.scss";
+import { Link } from "react-router-dom";
 
 import TelegramButton from "../../microComponents/TelegramButton";
 import WhatsAppButton from "../../microComponents/WhatsAppButton";
@@ -45,7 +46,13 @@ function Footer() {
             </div>
 
             <div className={styles.license}>
-                <span>© 2026 Books Place. Все права защищены.</span>
+                <span>
+                    © 2026 Books Place{" "}
+                    <Link to={"https://github.com/dmitryi-88"} target="_blanc">
+                        (dmitryi-88)
+                    </Link>{" "}
+                    . Все права защищены.
+                </span>
             </div>
         </footer>
     );
