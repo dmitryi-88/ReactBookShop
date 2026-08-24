@@ -10,13 +10,15 @@ import FilterByAuthor from "../../components/FilterByAuthor/FilterByAuthor";
 import useDebounce from "../../hooks/UseDebounce";
 // Context
 import ToastContext from "../../context/ToastContext.jsx";
-//LIB
+// Libs
 import { useState, useMemo, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 function MainPage() {
+    // Toast - уведомление
     const { isToast } = useContext(ToastContext);
 
+    // GET запрос с помощтю useQuery
     const {
         data: books = [],
         isLoading,

@@ -1,13 +1,15 @@
 import styles from "./Cart.module.scss";
-
+// Api
+import { createOrder, UpdateStock } from "../../API/UseApi.js";
+// Context
 import CartContext from "../../context/CartContext";
+// Components
 import CartItem from "../../components/CartItem/CartItem";
 import EmptyCart from "../../components/EmptyCart/EmptyCart";
-
+// Libs
 import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useMemo } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createOrder, UpdateStock } from "../../API/UseApi.js";
 
 function Cart() {
     const queryClient = useQueryClient();
@@ -85,7 +87,7 @@ function Cart() {
                         Очистить корзину
                     </button>
 
-                    <NavLink to={"/"} viewTransition>
+                    <NavLink to={"/"}>
                         <button>Вернуться к покупкам</button>
                     </NavLink>
                 </div>

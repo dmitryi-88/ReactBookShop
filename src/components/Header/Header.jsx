@@ -1,9 +1,11 @@
 import styles from "./Header.module.scss";
+// Libs
 import { NavLink } from "react-router-dom";
-
 import { useContext } from "react";
+// Context
 import CartContext from "../../context/CartContext";
 import ThemeContext from "../../context/ThemeContext";
+// Components
 import CartButtonOnHeader from "../../microComponents/CartButtonOnHeader";
 
 function Header() {
@@ -12,7 +14,7 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <NavLink to={"/"} className={styles.logo} viewTransition>
+            <NavLink to={"/"} className={styles.logo}>
                 Books Place
             </NavLink>
 

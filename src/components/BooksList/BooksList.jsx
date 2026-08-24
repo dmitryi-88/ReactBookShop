@@ -1,8 +1,12 @@
-import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
 import styles from "./BooksList.module.scss";
-import { memo, useContext } from "react";
+// Context
 import CartContext from "../../context/CartContext";
 import ToastContext from "../../context/ToastContext";
+// Components
+import CartButtonOnCard from "../../microComponents/CartButtonOnCard";
+// Libs
+import { memo, useContext } from "react";
+
 
 const BooksList = memo(({ books }) => {
     const { dispatch } = useContext(CartContext);
